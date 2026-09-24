@@ -11,5 +11,8 @@
     "build": "pnpm --filter @pdfstart/report run build",
     "demo": "pnpm --filter @pdfstart/report run demo",
     "report": "pnpm --filter @pdfstart/report run report"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^3.0.3"
   }
 }

@@ -1,4 +1,4 @@
-import { markdownToTypst, STYLE_TO_TEMPLATE } from "@pdfstart/core";
+import { markdownToTypst, STYLE_TO_TEMPLATE } from "../../core/src/index.ts";
 import {
   createTypstCompiler,
   initOptions,

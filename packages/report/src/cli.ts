@@ -20,6 +20,18 @@ import {
   type TypstStyleId,
 } from "@pdfstart/core";
 
+// Inline the typst style templates at build time so the CLI is fully
+// self-contained (no runtime file lookups, no published core dependency).
+declare module "*/modern-tech.typ" { const src: string; export default src; }
+declare module "*/classic-editorial.typ" { const src: string; export default src; }
+import modernTechRaw from "@pdfstart/core/styles/modern-tech.typ";
+import classicEditorialRaw from "@pdfstart/core/styles/classic-editorial.typ";
+
+const STYLE_RAW: Record<string, string> = {
+  ["modern-tech"]: modernTechRaw,
+  ["classic-editorial"]: classicEditorialRaw,
+};
+
 const here = dirname(fileURLToPath(import.meta.url));
 
 interface CliArgs {
@@ -76,18 +88,7 @@ function escapeRegExp(s: string): string {
   return s.replace(/[.*+?^${}()|[]\\]/g, "\\$&");
 }
 
-function resolveStyleFile(style: TypstStyleId): string {
-  // dev layout: dist/cli.ts sibling is src/cli.ts -> packages/report -> packages/core/src/styles
-  const name = basename(STYLE_TO_TEMPLATE[style].path);
-  const candidates = [
-    join(here, "..", "..", "core", "src", "styles", name),
-    join(here, "..", "src", "styles", name),
-  ];
-  for (const f of candidates) {
-    if (existsSync(f)) return f;
-  }
-  throw new Error('Style file not found for "' + style + '" (looked in: ' + candidates.join(", ") + ")");
-}
+
 
 export async function convert(argv: string[]): Promise<void> {
   const args = parseArgs(argv);
@@ -120,7 +121,7 @@ export async function convert(argv: string[]): Promise<void> {
   const outPath = join(workDir, basename(out));
 
   writeFileSync(mainPath, patched);
-  writeFileSync(stylePath, readFileSync(resolveStyleFile(args.style), "utf8"));
+  writeFileSync(stylePath, STYLE_RAW[args.style]);
 
   try {
     execFileSync(
