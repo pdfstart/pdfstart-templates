@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>pdfstart report - turn your notes into a PDF you can send as-is</title>
+    <title>PDFStart Report - turn your notes into a PDF you can send as-is</title>
     <style>
       :root { color-scheme: light; }
       body {
@@ -38,7 +38,7 @@
   </head>
   <body>
     <main>
-      <h1>pdfstart report</h1>
+      <h1>PDFStart Report</h1>
       <p class="sub">Paste your notes. Get a report PDF you can send to your boss as-is.</p>
       <div class="grid">
         <div>
@@ -55,14 +55,17 @@
                 <option value="en">English</option>
                 <option value="zh">Chinese</option>
                 <option value="ja">Japanese</option>
+                <option value="de">German</option>
+                <option value="es">Spanish</option>
+                <option value="fr">French</option>
                 <option value="ko">Korean</option>
+                <option value="nl">Dutch</option>
               </select>
             </label>
             <button id="go">Make PDF</button>
             <button id="dl" disabled>Download</button>
           </div>
           <div class="status" id="status">Ready.</div>
-          <p class="hint">Also available as a command: <code>npx @pdfstart/report-templates your-notes.md</code></p>
         </div>
         <div class="preview" id="preview">
           <iframe id="frame" title="PDF preview" src="about:blank"></iframe>

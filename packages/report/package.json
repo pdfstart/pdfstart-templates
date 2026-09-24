@@ -9,7 +9,7 @@
     "markdown",
     "typst"
   ],
-  "homepage": "https://pdfstart.com/report-templates",
+  "homepage": "https://pdfstart.com/tools/markdown-to-pdf",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pdfstart/doc-templates.git",
