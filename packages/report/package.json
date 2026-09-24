@@ -1,0 +1,52 @@
+{
+  "name": "@pdfstart/report-templates",
+  "version": "0.1.0",
+  "description": "Turn your notes into a polished report PDF you can send to your boss as-is.",
+  "keywords": [
+    "report",
+    "weekly report",
+    "pdf",
+    "markdown",
+    "typst"
+  ],
+  "homepage": "https://pdfstart.com/report-templates",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pdfstart/doc-templates.git",
+    "directory": "packages/report-templates"
+  },
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "pdfstart-report": "bin/pdfstart-report.mjs"
+  },
+  "main": "./dist/cli.js",
+  "files": [
+    "dist",
+    "bin",
+    "templates"
+  ],
+  "scripts": {
+    "build": "esbuild src/cli.ts --bundle --platform=node --format=esm --external:unified --external:remark-parse --external:remark-frontmatter --external:remark-gfm --external:remark-math --external:unist-util-visit --external:tex2typst --outfile=dist/cli.js --log-level=warning",
+    "demo": "vite demo",
+    "report": "node bin/pdfstart-report.mjs"
+  },
+  "dependencies": {
+    "@pdfstart/core": "workspace:*",
+    "remark-frontmatter": "^5.0.0",
+    "remark-gfm": "^4.0.0",
+    "remark-math": "^6.0.0",
+    "remark-parse": "^11.0.0",
+    "tex2typst": "^0.6.2",
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.0.0"
+  },
+  "devDependencies": {
+    "@myriaddreamin/typst.ts": "^0.7.0",
+    "@myriaddreamin/typst-ts-web-compiler": "^0.7.0",
+    "esbuild": "^0.28.2",
+    "vite": "^8.3.0",
+    "@types/mdast": "^4.0.4",
+    "@types/unist": "^3.0.3"
+  }
+}

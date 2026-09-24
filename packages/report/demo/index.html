@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>pdfstart report - turn your notes into a PDF you can send as-is</title>
+    <style>
+      :root { color-scheme: light; }
+      body {
+        margin: 0;
+        font: 15px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        background: #f6f7f9;
+        color: #1c1e21;
+      }
+      main { max-width: 880px; margin: 0 auto; padding: 32px 20px 80px; }
+      h1 { font-size: 26px; margin: 8px 0 4px; }
+      .sub { color: #5c6470; margin: 0 0 24px; }
+      .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+      @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
+      textarea {
+        width: 100%; min-height: 420px; resize: vertical;
+        font: 13px/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        border: 1px solid #d4d9e0; border-radius: 8px; padding: 12px;
+        background: #fff;
+      }
+      .bar { display: flex; gap: 10px; align-items: center; margin: 12px 0; flex-wrap: wrap; }
+      select, button {
+        font: inherit; padding: 8px 14px; border-radius: 8px;
+        border: 1px solid #d4d9e0; background: #fff;
+      }
+      button { background: #1157d6; color: #fff; border-color: #1157d6; cursor: pointer; }
+      button:disabled { opacity: .55; cursor: wait; }
+      .preview { border: 1px solid #d4d9e0; border-radius: 8px; background: #fff; min-height: 420px; }
+      .preview iframe { width: 100%; height: 780px; border: 0; display: block; border-radius: 8px; }
+      .status { color: #5c6470; font-size: 13px; min-height: 1.2em; }
+      .hint { color: #8a93a0; font-size: 13px; margin-top: 8px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>pdfstart report</h1>
+      <p class="sub">Paste your notes. Get a report PDF you can send to your boss as-is.</p>
+      <div class="grid">
+        <div>
+          <textarea id="md" spellcheck="false"></textarea>
+          <div class="bar">
+            <label>Style
+              <select id="style">
+                <option value="modern-tech">Modern (default)</option>
+                <option value="classic-editorial">Classic editorial</option>
+              </select>
+            </label>
+            <label>Language
+              <select id="lang">
+                <option value="en">English</option>
+                <option value="zh">Chinese</option>
+                <option value="ja">Japanese</option>
+                <option value="ko">Korean</option>
+              </select>
+            </label>
+            <button id="go">Make PDF</button>
+            <button id="dl" disabled>Download</button>
+          </div>
+          <div class="status" id="status">Ready.</div>
+          <p class="hint">Also available as a command: <code>npx @pdfstart/report-templates your-notes.md</code></p>
+        </div>
+        <div class="preview" id="preview">
+          <iframe id="frame" title="PDF preview" src="about:blank"></iframe>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

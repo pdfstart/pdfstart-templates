@@ -1,0 +1,25 @@
+{
+  "name": "@pdfstart/core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Shared markdown-to-Typst rendering engine for pdfstart scenario packages. Not published on purpose.",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./styles/*": "./src/styles/*"
+  },
+  "dependencies": {
+    "remark-frontmatter": "^5.0.0",
+    "remark-gfm": "^4.0.0",
+    "remark-math": "^6.0.0",
+    "remark-parse": "^11.0.0",
+    "tex2typst": "^0.6.2",
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/mdast": "^4.0.4",
+    "@types/unist": "^3.0.3"
+  }
+}

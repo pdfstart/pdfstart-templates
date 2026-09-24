@@ -1,0 +1,15 @@
+{
+  "name": "doc-templates",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Turn what you write into a polished PDF you can send as-is.",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "pnpm --filter @pdfstart/report-templates run build",
+    "demo": "pnpm --filter @pdfstart/report-templates run demo",
+    "report": "pnpm --filter @pdfstart/report-templates run report"
+  }
+}
