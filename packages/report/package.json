@@ -32,6 +32,7 @@
     "report": "node bin/pdfstart-report.mjs"
   },
   "devDependencies": {
+    "@myriaddreamin/typst-ts-renderer": "0.7.0",
     "@myriaddreamin/typst-ts-web-compiler": "^0.7.0",
     "@myriaddreamin/typst.ts": "^0.7.0",
     "@types/mdast": "^4.0.4",

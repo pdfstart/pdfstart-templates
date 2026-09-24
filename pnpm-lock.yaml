@@ -45,12 +45,15 @@ importers:
 
   packages/report:
     devDependencies:
+      '@myriaddreamin/typst-ts-renderer':
+        specifier: 0.7.0
+        version: 0.7.0
       '@myriaddreamin/typst-ts-web-compiler':
         specifier: ^0.7.0
         version: 0.7.0
       '@myriaddreamin/typst.ts':
         specifier: ^0.7.0
-        version: 0.7.0(@myriaddreamin/typst-ts-web-compiler@0.7.0)
+        version: 0.7.0(@myriaddreamin/typst-ts-renderer@0.7.0)(@myriaddreamin/typst-ts-web-compiler@0.7.0)
       '@types/mdast':
         specifier: ^4.0.4
         version: 4.0.4
@@ -302,6 +305,9 @@ packages:
   '@manypkg/tools@2.1.2':
     resolution: {integrity: sha512-6QEf6yqFbETdwGITKq57aYoPfX/3K8XFNwsAlx0C1M7o8cb79sv1M3w+tWuWvIcSbNqrLF7OD7YpZMVVz335hQ==}
     engines: {node: '>=20.0.0'}
+
+  '@myriaddreamin/typst-ts-renderer@0.7.0':
+    resolution: {integrity: sha512-3sXIGxZn9MufPrPn6251DeuLf2FIEILYNzY5lX0XOJmaIYqgvQ3qpfqkCjgQD+splBvt5R1N3BuuNFrZKsHhMw==}
 
   '@myriaddreamin/typst-ts-web-compiler@0.7.0':
     resolution: {integrity: sha512-nMwMcfOBy5pABPDuVM7/u8425SxhPUM+OJe6daqqgVOT3+neCTz4JKwx2L8XasfEHTNvd0cUI07LR9q5ADo7Gw==}
@@ -1117,12 +1123,15 @@ snapshots:
       tinyglobby: 0.2.17
       yaml: 2.9.1
 
+  '@myriaddreamin/typst-ts-renderer@0.7.0': {}
+
   '@myriaddreamin/typst-ts-web-compiler@0.7.0': {}
 
-  '@myriaddreamin/typst.ts@0.7.0(@myriaddreamin/typst-ts-web-compiler@0.7.0)':
+  '@myriaddreamin/typst.ts@0.7.0(@myriaddreamin/typst-ts-renderer@0.7.0)(@myriaddreamin/typst-ts-web-compiler@0.7.0)':
     dependencies:
       idb: 7.1.1
     optionalDependencies:
+      '@myriaddreamin/typst-ts-renderer': 0.7.0
       '@myriaddreamin/typst-ts-web-compiler': 0.7.0
 
   '@oxc-project/types@0.150.0': {}
