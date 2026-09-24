@@ -14,3 +14,10 @@ export {
   type MarkdownToTypstOptions,
   type TypstStyleId,
 } from "./transpiler/types.js";
+export {
+  fetchRequiredFontBuffers,
+  isValidFont,
+  type FontBuffers,
+  type FontInfo,
+  type LangCode,
+} from "./fonts.js";
