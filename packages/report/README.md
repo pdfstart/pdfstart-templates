@@ -16,7 +16,8 @@ paste your notes, pick a style, download the PDF.
 
 - A4, paginated, print-ready PDF
 - Consistent heading hierarchy, body text, and tables
-- Two ready styles: **Modern tech** and **Classic editorial**
+- Three ready styles: **Modern tech**, **Classic editorial**, and **Executive minimal**
+  (plain white, serif, no decoration — built for a reader who just needs to trust the document)
 - CJK-ready typesetting (zh / ja / ko); latin languages (en / de / es / fr / nl)
   use the engine's built-in fonts
 - The template set this package publishes is the same one the browser tool
