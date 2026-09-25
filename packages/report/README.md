@@ -23,6 +23,17 @@ same ones this package ships — this repo is where that code lives.
 - CJK fonts handled for you — no missing-glyph boxes (zh / ja / ko);
   latin languages (en / de / es / fr / nl) use the engine's built-in fonts
 
+## What this package is for
+
+@pdfstart/report does one thing well: it turns your notes into a weekly-report
+PDF you can send to your boss as-is. Two layout styles, seven languages,
+and it works right in the browser → [pdfstart.com/Markdown to PDF](https://pdfstart.com/tools/markdown-to-pdf)
+
+Write your notes in markdown. Pick a style. Get a document that looks like a
+publisher shipped it — no design skills, no Word, no sign-up.
+
+---
+
 ## Embed the engine in your own site
 
 The browser entry is a self-contained ESM bundle. One init, then render as

@@ -29,7 +29,8 @@
   "scripts": {
     "build": "node build.mjs",
     "demo": "vite demo",
-    "report": "node bin/pdfstart-report.mjs"
+    "report": "node bin/pdfstart-report.mjs",
+    "snapshot": "node scripts/contract-snapshot.mjs"
   },
   "devDependencies": {
     "@myriaddreamin/typst-ts-renderer": "0.7.0",

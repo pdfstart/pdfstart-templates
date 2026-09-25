@@ -22,6 +22,15 @@ A small monorepo of scenario packages (report first; invoice next):
 - packages/report — @pdfstart/report, the report scenario
 - packages/core — shared typesetting engine (internal, not published)
 
+## What you get
+
+Each scenario package does one thing well. **@pdfstart/report** turns your
+notes into a weekly-report PDF you can send to your boss as-is: two layout
+styles, seven languages, and it runs right in the browser →
+[pdfstart.com/Markdown to PDF](https://pdfstart.com/tools/markdown-to-pdf).
+Write the words; the package handles the rest. No design skills, no Word,
+no sign-up.
+
 ## Development
 
 Package manager: pnpm (no npm lockfiles).
