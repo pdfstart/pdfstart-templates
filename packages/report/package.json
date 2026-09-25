@@ -2,43 +2,10 @@
   "name": "@pdfstart/report",
   "version": "0.1.0",
   "description": "Turn your notes into a polished report PDF you can send to your boss as-is.",
-  "keywords": [
-    "report",
-    "weekly report",
-    "pdf",
-    "markdown",
-    "typst"
-  ],
+  "keywords": ["report", "weekly report", "pdf", "markdown", "typst"],
   "homepage": "https://pdfstart.com/tools/markdown-to-pdf",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pdfstart/pdfstart-templates.git",
-    "directory": "packages/report"
-  },
+  "repository": { "type": "git", "url": "git+https://github.com/pdfstart/pdfstart-templates.git", "directory": "packages/report" },
   "license": "MIT",
-  "type": "module",
-  "bin": {
-    "pdfstart-report": "bin/pdfstart-report.mjs"
-  },
-  "main": "./dist/cli.js",
-  "files": [
-    "dist",
-    "bin",
-    "templates"
-  ],
-  "scripts": {
-    "build": "node build.mjs",
-    "demo": "vite demo",
-    "report": "node bin/pdfstart-report.mjs",
-    "snapshot": "node scripts/contract-snapshot.mjs"
-  },
-  "devDependencies": {
-    "@myriaddreamin/typst-ts-renderer": "0.7.0",
-    "@myriaddreamin/typst-ts-web-compiler": "^0.7.0",
-    "@myriaddreamin/typst.ts": "^0.7.0",
-    "@types/mdast": "^4.0.4",
-    "@types/unist": "^3.0.3",
-    "esbuild": "^0.28.2",
-    "vite": "^8.3.0"
-  }
+  "files": ["templates", "README.md"]
 }
+
