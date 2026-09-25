@@ -2,5 +2,7 @@
 "@pdfstart/report-templates": minor
 ---
 
-Initial release: report scenario package - Markdown in, typeset A4 PDF out
-(page numbers, headings, tables, CJK-ready). CLI + browser entry.
+Initial release: the report scenario template set — two ready styles
+(Modern tech, Classic editorial), seven languages, CJK-ready. Use them
+from the browser at pdfstart.com/tools/markdown-to-pdf.
+

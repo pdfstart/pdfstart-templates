@@ -1,5 +1,5 @@
-// 方案二：经典阅读风 (The "Classic Editorial" Style)
-// 特点：正文衬线、标题无衬线对比、首行缩进、引用块左侧竖线。
+// Style: Classic Editorial.
+// Serif body, sans headings for contrast, first-line indent, left rule on quote blocks.
 
 #let article(
   title: "",
@@ -48,7 +48,7 @@
   set page(paper: "a4", margin: (x: 2.5cm, y: 2.5cm))
   set document(title: title, author: authors)
 
-  // 1) 字体：正文衬线 + 英文字体兜底（更像纸质阅读），标题单独用无衬线建立对比，末尾添加 emoji 字体
+  // 1) Fonts: serif body (book-like reading) with CJK fallbacks; sans headings for contrast; emoji font appended
   let base-body-fonts = (
     "Libertinus Serif",
     "Noto Serif SC",
@@ -78,7 +78,7 @@
     lang: lang,
   )
 
-  // 2) 段落：传统书籍排版（但略增行距/段距，避免过紧）
+  // 2) Paragraphs: traditional book typesetting (slightly increased leading/spacing to avoid crowding)
   set par(
     justify: true,
     leading: body-leading,
@@ -88,7 +88,7 @@
   set list(indent: 1em, body-indent: 0.5em, spacing: 0.6em, marker: [•])
   set enum(indent: 1em, body-indent: 0.5em, spacing: 0.6em)
 
-  // 3) 标题：无衬线形成对比 + 加粗 + 深灰
+  // 3) Headings: sans for contrast, bold, dark gray
   show heading: it => {
     set text(font: heading-fonts, weight: "bold", fill: rgb("#333333"))
     block(above: 2em, below: 1em, it)
@@ -99,7 +99,7 @@
     block(above: 2em, below: 1em, it)
   }
 
-  // 4) 引用块：左侧竖线
+  // 4) Quotes: left rule
   set quote(block: true)
   show quote: it => {
     set par(first-line-indent: 0pt)
@@ -113,7 +113,7 @@
     )
   }
 
-  // 5) 行内代码：轻背景 + 圆角
+  // 5) Inline code: light background + rounded corners
   show raw.where(block: false): it => box(
     fill: luma(240),
     inset: (x: 3pt, y: 1pt),
@@ -121,7 +121,7 @@
     it,
   )
 
-  // 6) 代码块：浅灰背景 + 圆角
+  // 6) Code blocks: light gray background + rounded corners
   show raw.where(block: true): block.with(
     fill: luma(245),
     inset: 10pt,
@@ -131,7 +131,7 @@
   )
   show raw: set text(font: ("DejaVu Sans Mono",))
 
-  // 7) 表格样式：经典边框
+  // 7) Tables: classic borders
   set table(
     stroke: (paint: luma(150), thickness: 0.8pt),
     inset: 7pt,
@@ -140,7 +140,7 @@
   show table: set par(justify: false, first-line-indent: 0pt, spacing: 0.5em)
   show table.cell.where(y: 0): set text(weight: "bold")
 
-  // 标题区（可选）
+  // Title block (optional)
   if title != "" {
     align(center)[
       #text(2em, weight: "bold", font: title-fonts, title)

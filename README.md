@@ -17,18 +17,17 @@ paste your notes, pick a style, download the PDF. Nothing to install.
 
 ## What is in this repo
 
-A small monorepo of scenario packages (report first; invoice next):
+A small monorepo of scenario template packages (report first; invoice next):
 
-- packages/report-templates — @pdfstart/report-templates, the report scenario
-- packages/core — shared typesetting engine (internal, not published)
+- packages/report-templates — @pdfstart/report-templates: ready-to-use report templates (two layout styles,
+  weekly-report example included).
 
-## Development
+## What you get
 
-Package manager: pnpm (no npm lockfiles).
-
-Install with pnpm install, then build the report package, produce a sample PDF
-from templates/weekly-report.example.md, or run the local browser demo at
-http://localhost:5173.
+Each scenario package ships the templates behind one thing done well.
+**@pdfstart/report-templates** carries the report scenario: two layout styles, seven
+languages, CJK-ready — the same templates powering
+[pdfstart.com — Markdown to PDF](https://pdfstart.com/tools/markdown-to-pdf).
 
 ## Release flow
 
@@ -37,4 +36,5 @@ pdfstart account may publish.
 
 ---
 
-**PDFStart** · [pdfstart.com](https://pdfstart.com)
+**PDFStart** . [pdfstart.com](https://pdfstart.com)
+

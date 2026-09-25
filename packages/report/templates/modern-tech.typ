@@ -1,5 +1,5 @@
-// 方案一：现代科技风 (The "Modern Tech" Style)
-// 特点：全无衬线（更像网页阅读）、段间距、无首行缩进、代码块现代风格。
+// Style: Modern Tech.
+// All-sans (web-like reading), paragraph spacing instead of first-line indent, modern code blocks.
 
 #let article(
   title: "",
@@ -41,7 +41,7 @@
   let text-size = resolve-size(size)
   let body-leading = resolve-leading(args.at("leading", default: density))
   let body-spacing = resolve-spacing(args.at("spacing", default: density))
-  // 1) 页面设置：宽边距，利于阅读
+  // 1) Page: wide margins for comfortable reading
   set page(
     paper: "a4",
     margin: (x: 1.8cm, y: 2cm),
@@ -49,7 +49,7 @@
   )
   set document(title: title, author: authors)
 
-  // 2) 字体栈：根据 font 参数选择无衬线（默认，屏幕阅读舒适）或衬线（CJK 长文阅读），末尾添加 emoji 字体
+  // 2) Font stack: sans (default, comfortable on screen) or serif (long CJK reading) per the font arg; emoji font appended
   let sans-fonts = (
     "IBM Plex Sans",
     "Roboto",
@@ -83,7 +83,7 @@
     lang: lang,
   )
 
-  // 3) 段落：放弃首行缩进，采用“段间距”模式（更接近网页阅读）
+  // 3) Paragraphs: no first-line indent; paragraph spacing instead (closer to web reading)
   set par(
     justify: true,
     leading: body-leading,
@@ -93,7 +93,7 @@
   set list(indent: 1em, body-indent: 0.5em, spacing: 0.8em, marker: [•])
   set enum(indent: 1em, body-indent: 0.5em, spacing: 0.8em)
 
-  // 4) 标题：加粗、深灰、留白（建立清晰层级）
+  // 4) Headings: bold, dark gray, whitespace (clear hierarchy)
   show heading: it => {
     set text(
       weight: "bold",
@@ -103,10 +103,10 @@
     block(above: 2em, below: 1em, it)
   }
 
-  // 5) 链接颜色：科技蓝
+  // 5) Link color: tech blue
   show link: set text(fill: rgb("#0074de"))
 
-  // 6) 引用块：左侧高亮线 + 浅背景
+  // 6) Quotes: left accent bar + light background
   set quote(block: true)
   show quote: it => {
     set par(first-line-indent: 0pt)
@@ -120,7 +120,7 @@
     )
   }
 
-  // 7) 行内代码：轻背景 + 圆角（避免只是变成等宽字体）
+  // 7) Inline code: light background + rounded corners (more than a monospace swap)
   show raw.where(block: false): it => box(
     fill: luma(240),
     inset: (x: 3pt, y: 1pt),
@@ -128,7 +128,7 @@
     it,
   )
 
-  // 8) 代码块：圆角 + 浅灰背景
+  // 8) Code blocks: rounded corners + light gray background
   show raw.where(block: true): block.with(
     fill: luma(245),
     inset: 12pt,
@@ -138,7 +138,7 @@
   )
   show raw: set text(font: ("JetBrains Mono", "Fira Code", "Consolas", "DejaVu Sans Mono"))
 
-  // 9) 表格样式：交替行背景 + 灰色表头
+  // 9) Tables: subtle borders, gray header row
   set table(
     stroke: (paint: luma(200), thickness: 0.5pt),
     inset: 8pt,
@@ -147,7 +147,7 @@
   show table: set par(justify: false, spacing: 0.6em)
   show table.cell.where(y: 0): set text(weight: "bold", fill: white)
 
-  // 标题区（可选）
+  // Title block (optional)
   if title != "" {
     align(center)[
       #text(1.8em, weight: "black", title)

@@ -4,15 +4,7 @@
   "private": true,
   "type": "module",
   "description": "Turn what you write into a polished PDF you can send as-is.",
-  "workspaces": [
-    "packages/*"
-  ],
-  "scripts": {
-    "build": "pnpm --filter @pdfstart/report-templates run build",
-    "demo": "pnpm --filter @pdfstart/report-templates run demo",
-    "report": "pnpm --filter @pdfstart/report-templates run report"
-  },
-  "devDependencies": {
-    "@changesets/cli": "^3.0.3"
-  }
+  "workspaces": ["packages/*"],
+  "devDependencies": { "@changesets/cli": "^3.0.3" }
 }
+
