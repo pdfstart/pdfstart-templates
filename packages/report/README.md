@@ -50,4 +50,3 @@ paste your notes, pick a style, download the PDF.
 Part of the PDFStart scenario packages (report first; invoice next).
 
 **PDFStart** · [pdfstart.com](https://pdfstart.com/tools/markdown-to-pdf)
-

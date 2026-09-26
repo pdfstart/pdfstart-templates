@@ -7,4 +7,3 @@
   "workspaces": ["packages/*"],
   "devDependencies": { "@changesets/cli": "^3.0.3" }
 }
-

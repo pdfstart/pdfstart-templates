@@ -2,10 +2,9 @@
   "name": "@pdfstart/report-templates",
   "version": "0.1.0",
   "description": "Turn your notes into a polished report PDF you can send to your boss as-is.",
-  "keywords": ["report", "weekly report", "pdf", "markdown", "typst"],
+  "keywords": ["report", "report template", "report templates", "weekly report", "pdf", "markdown", "typst"],
   "homepage": "https://pdfstart.com/tools/markdown-to-pdf",
   "repository": { "type": "git", "url": "git+https://github.com/pdfstart/doc-templates.git", "directory": "packages/report-templates" },
   "license": "MIT",
   "files": ["templates", "README.md"]
 }
-
